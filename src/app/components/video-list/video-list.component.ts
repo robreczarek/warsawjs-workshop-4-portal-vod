@@ -12,6 +12,7 @@ export class VideoListComponent implements OnInit {
 
   private videos: Video[]
   private video: Video
+  private searchFor: string
 
   constructor(private videoService: VideoService) { }
 
@@ -24,4 +25,5 @@ export class VideoListComponent implements OnInit {
   onVideoClick(video: Video) {
     this.video = video;
   }
+
 }

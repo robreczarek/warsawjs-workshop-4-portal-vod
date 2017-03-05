@@ -1,15 +1,22 @@
 <div class="album text-muted">
   <div class="container">
+    <form class="form-inline my-2 my-lg-0">
+      <input [(ngModel)]="searchFor" class="form-control mr-sm-2" type="text" placeholder="Search" name="searchFor">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    Search for: {{searchFor}}
     <app-video-player [video]="video" *ngIf="video"></app-video-player>
     <div class="row">
-      <div class="card" *ngFor="let video of videos">
+      <div class="card" *ngFor="let video of videos | search:searchFor">
         <img class="card-img-top" [src]="video.thumb" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">{{video.title}}</h4>
           <p class="card-text">{{video.description}}</p>
-          <a (click)="onVideoClick(video)" class="btn btn-primary">Watch Video</a>
+          <a [routerLink]="['/detail', video.id ]" class="btn btn-primary">Watch Video</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!--  (click)="onVideoClick(video)" -->
