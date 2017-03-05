@@ -3,11 +3,11 @@
     <div class="row">
 
       <div class="card" *ngFor="let video of videos">
-        <img class="card-img-top" src="{{video.thumb}}" alt="Card image cap">
+        <img class="card-img-top" [src]="video.thumb" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">{{video.title}}</h4>
           <p class="card-text">{{video.description}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a (click)="onVideoClick()" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
