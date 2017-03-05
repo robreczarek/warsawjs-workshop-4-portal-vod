@@ -20,7 +20,7 @@ export class VideoService {
               id: value.id.videoId,
               description: value.description,
               thumb: value.snippet.thumbnails.high.url,
-              title: value.title
+              title: value.snippet.title
             }
             return el;
 

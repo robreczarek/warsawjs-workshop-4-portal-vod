@@ -11,16 +11,17 @@ import { Video } from '../../models/video/video';
 export class VideoListComponent implements OnInit {
 
   private videos: Video[]
+  private video: Video
 
   constructor(private videoService: VideoService) { }
 
   ngOnInit() {
     this.videoService.search().subscribe(videos=>{
-      this.videos = videos
+      this.videos = videos;
     })
   }
 
-  onVideoClick() {
-
+  onVideoClick(video: Video) {
+    this.video = video;
   }
 }

@@ -11,6 +11,7 @@ import { VideoListComponent } from './components/video-list/video-list.component
 import { HeaderComponent } from './components/header/header.component';
 
 import { VideoService } from './services/video.service';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VideoService } from './services/video.service';
     NavBarComponent,
     FooterComponent,
     VideoListComponent,
-    HeaderComponent
+    HeaderComponent,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,

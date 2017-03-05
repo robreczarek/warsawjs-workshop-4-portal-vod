@@ -1,13 +1,13 @@
 <div class="album text-muted">
   <div class="container">
+    <app-video-player [video]="video" *ngIf="video"></app-video-player>
     <div class="row">
-
       <div class="card" *ngFor="let video of videos">
         <img class="card-img-top" [src]="video.thumb" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">{{video.title}}</h4>
           <p class="card-text">{{video.description}}</p>
-          <a (click)="onVideoClick()" class="btn btn-primary">Go somewhere</a>
+          <a (click)="onVideoClick(video)" class="btn btn-primary">Watch Video</a>
         </div>
       </div>
     </div>
