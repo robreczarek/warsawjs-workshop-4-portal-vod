@@ -5,7 +5,9 @@ import { VideoDetailComponent } from "./components/video-detail/video-detail.com
 
 const routes: Routes = [
   { path: '', component: VideoListComponent },
-  { path: 'detail/:videoId', component: VideoDetailComponent }
+  { path: 'detail/:videoId', component: VideoDetailComponent },
+  { path: 'user', loadChildren: './modules/user/user.module#UserModule' },
+  { path: 'editor', loadChildren: './modules/editor/editor.module#EditorModule' }
 ];
 
 @NgModule({
