@@ -16,6 +16,8 @@ import { SafePipe } from './pipes/safe.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +34,17 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [
     VideoService
   ],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    VideoPlayerComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -34,7 +34,6 @@ export class VideoService {
   }
 
   get(id): Observable<Video> {
-    console.log('id: ', id)
     return this.search()
       .map(videos => {
         return videos.filter(video => {
@@ -42,7 +41,6 @@ export class VideoService {
         })
       })
       .map(videos => {
-        console.log(videos)
          return videos[0]
        })
     }

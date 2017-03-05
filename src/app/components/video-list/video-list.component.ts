@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { VideoService } from '../../services/video.service';
 import { Video } from '../../models/video/video';
+import { VideoPlayerComponent } from '../video-player/video-player.component';
+
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-video-list',
@@ -14,7 +17,10 @@ export class VideoListComponent implements OnInit {
   private video: Video
   private searchFor: string
 
-  constructor(private videoService: VideoService) { }
+  constructor(
+    private videoService: VideoService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
     this.videoService.search().subscribe(videos=>{
@@ -23,7 +29,10 @@ export class VideoListComponent implements OnInit {
   }
 
   onVideoClick(video: Video) {
-    this.video = video;
+    const modalRef = this.modalService.open(VideoPlayerComponent);
+    modalRef.componentInstance.video = video;
+
+
   }
 
 }
