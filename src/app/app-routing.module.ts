@@ -5,7 +5,7 @@ import { VideoListComponent } from "./components/video-list/video-list.component
 const routes: Routes = [
   {
     path: '',
-    children: []
+    component: VideoListComponent
   }
 ];
 
