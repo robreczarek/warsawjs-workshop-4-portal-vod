@@ -7,7 +7,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class VideoService {
 
-  private dataLink = '/assets/search.json';
+  private dataLink = './assets/search.json';
 
 
   constructor(private http: Http) { }
