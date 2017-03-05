@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { VideoService } from './services/video.service';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { VideoPlayerComponent } from './components/video-player/video-player.com
     FooterComponent,
     VideoListComponent,
     HeaderComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
