@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
 import { HeaderComponent } from './components/header/header.component';
 
+import { VideoService } from './services/video.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { HeaderComponent } from './components/header/header.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    VideoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
